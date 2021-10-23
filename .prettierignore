@@ -1,0 +1,14 @@
+node_modules
+public
+build
+out
+package.json
+.prettierignore
+.gitignore
+yarn.lock
+.editorconfig
+.eslintignore
+yarn-error.log
+*.md
+
+# src/pages/app.tsx

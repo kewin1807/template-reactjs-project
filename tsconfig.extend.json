@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@API/types": ["src/api/types.ts"],
+      "@API": ["src/api/index.ts"],
+      "@layouts": ["src/layouts/index.ts"],
+      "@layouts/*": ["src/layouts/*"],
+      "@components": ["src/components/"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@pages": ["src/pages/index.ts"],
+      "@locales/*": ["src/locales/*"],
+      "@routes": ["src/routes/index.ts"],
+      "@utils/*": ["src/utils/*"],
+      "@assets/*": ["src/assets/*"],
+      "@redux/*": ["src/redux/*"]
+    },
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules", "mock"]
+}

@@ -1,0 +1,63 @@
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://res.cdn.avepointonlineservices.com/googlefont.css');
+@import url('https://res.cdn.avepointonlineservices.com/flyonline/fia-flyo.css');
+@import './normalize.scss';
+
+$prefix: 'dte';
+
+html {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  font-family: $default-font-family;
+  body {
+    height: inherit;
+    font-family: $default-font-family;
+
+    *:not([data-icon-name], [class^='fia-'], [class*='fia-']) {
+      font-family: $default-font-family !important;
+    }
+    a {
+      color: $primary-color;
+    }
+
+    #root {
+      height: inherit;
+    }
+
+    .ms-Fabric {
+      height: inherit;
+      font-family: $default-font-family !important;
+    }
+
+    .#{$prefix}-clearfix {
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .#{$prefix}-visible {
+      visibility: visible;
+    }
+
+    .#{$prefix}-hidden {
+      visibility: hidden;
+    }
+
+    .#{$prefix}-block {
+      display: block;
+    }
+
+    .#{$prefix}-none {
+      display: none;
+    }
+
+    .#{$prefix}-table-shadow {
+      box-shadow: 0 2px 12px #27313c29;
+    }
+
+    input::placeholder {
+      color: #868f96;
+      font-size: 13px !important;
+    }
+  }
+}

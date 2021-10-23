@@ -9,6 +9,27 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <% if(htmlWebpackPlugin.options.vendor) { %>
+      <script src="<%= htmlWebpackPlugin.options.vendor %>"></script>
+      <% } %>
+      <% if(htmlWebpackPlugin.options.react) { %>
+        <script src="<%= htmlWebpackPlugin.options.react %>"></script>
+        <% } %>
+        <% if(htmlWebpackPlugin.options.redux) { %>
+          <script src="<%= htmlWebpackPlugin.options.redux %>"></script>
+          <% } %>
+          <% if(htmlWebpackPlugin.options.rc) { %>
+            <script src="<%= htmlWebpackPlugin.options.rc %>"></script>
+            <% } %>
+            <% if(htmlWebpackPlugin.options.react) { %>
+              <script src="<%= htmlWebpackPlugin.options.fluentui %>"></script>
+              <% } %>
+              <% if(htmlWebpackPlugin.options.redux) { %>
+                <script src="<%= htmlWebpackPlugin.options.uifabric %>"></script>
+                <% } %>
+                <% if(htmlWebpackPlugin.options.icon) { %>
+                  <script src="<%= htmlWebpackPlugin.options.icon %>"></script>
+                  <% } %>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
