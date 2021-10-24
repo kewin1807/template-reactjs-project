@@ -1,0 +1,377 @@
+$menu-text-color: #868f96;
+$highlight-background: transparent
+  linear-gradient(
+    90deg,
+    rgba(0, 153, 168, 0.1) 0%,
+    rgba(0, 153, 168, 0.1) 17%,
+    rgba(0, 153, 168, 0) 100%
+  )
+  0% 0% no-repeat padding-box;
+$highlight-text-color: #fff;
+
+.aside-container {
+  // background: $dark-background;
+
+  .logo {
+    position: relative;
+    height: 66px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $primary-text-color;
+    cursor: pointer;
+
+    .img {
+      position: absolute;
+      top: 50%;
+      left: 24px;
+      width: 100px;
+      height: 33px;
+      margin: 0 auto;
+      background-image: url('~@assets/images/logo.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: translate(0, -50%);
+    }
+
+    .collapse {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      color: $menu-text-color;
+      font-size: 12px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  .menu {
+    max-height: 90vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 153, 168, 0.2) !important;
+      border-radius: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 153, 168, 0.4) !important;
+      border-radius: 3px;
+    }
+
+    div[data-selected='settingSelected'] {
+      :global {
+        .ms-Nav-chevronButton {
+          background: $highlight-background !important;
+          border-left: 4px solid $primary-color;
+        }
+
+        .ms-Button-flexContainer {
+          .ms-Icon {
+            color: $primary-color !important;
+          }
+          .ms-Nav-linkText {
+            color: $highlight-text-color;
+          }
+        }
+      }
+    }
+    :global {
+      .ms-Nav-link::after {
+        border-left: none;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    :global .ms-Nav-navItem {
+      position: relative;
+
+      .ms-Nav-navItems {
+        margin-bottom: 24px;
+      }
+
+      .is-selected {
+        .ms-Nav-chevronButton {
+          background: inherit;
+          &::after {
+            border: none;
+          }
+        }
+        .ms-Nav-link {
+          // background: $highlight-background;
+          background: $highlight-background !important;
+          border-left: 4px solid $primary-color !important;
+          .ms-Button-flexContainer {
+            margin-left: -3px;
+          }
+        }
+      }
+
+      .ms-Nav-navItems .is-selected {
+        .ms-Nav-link {
+          background: $dark-background !important;
+          .ms-Button-icon {
+            color: $highlight-text-color;
+          }
+          .ms-Nav-linkText {
+            color: $highlight-text-color !important;
+          }
+        }
+      }
+
+      .ms-Nav-compositeLink {
+        .ms-Nav-chevronButton {
+          position: absolute;
+          top: auto;
+          left: auto;
+          width: 100%;
+          height: 100%;
+          background: none;
+          .ms-Nav-chevron {
+            position: absolute;
+            top: 0;
+            right: 24px;
+            left: auto;
+            height: 100%;
+            color: $menu-text-color;
+            font-size: 10px;
+            line-height: 54px;
+          }
+
+          // &:hover {
+          //   border-left: 4px solid $primary-color;
+          //   .ms-Nav-chevron {
+          //     color: $highlight-text-color;
+          //   }
+          // }
+        }
+        .ms-Nav-chevronButton:hover + .ms-Button {
+          // background: $highlight-background;
+          .ms-Nav-linkText,
+          .ms-Icon {
+            color: $highlight-text-color !important;
+          }
+        }
+        &.is-selected .ms-Icon {
+          color: $primary-color;
+        }
+        &.is-selected .ms-Nav-linkText {
+          color: $highlight-text-color;
+          font-weight: 600;
+          font-size: 15px;
+        }
+        .ms-Icon {
+          width: 16px;
+          height: 20px;
+          margin-right: 16px;
+          margin-left: 19px;
+          color: $menu-text-color;
+        }
+        .ms-Nav-link {
+          height: 52px;
+          margin-bottom: 8px;
+          // padding: 0 20px 0 0 !important;
+          background: $dark-background;
+        }
+        .ms-Nav-link:hover {
+          background: $highlight-background;
+          border-left: 4px solid $dark-background;
+
+          .ms-Button-flexContainer {
+            margin-left: -3px;
+          }
+
+          & .ms-Icon {
+            color: $highlight-text-color;
+          }
+          & .ms-Nav-linkText {
+            color: $highlight-text-color;
+          }
+        }
+        .ms-Nav-linkText {
+          color: $menu-text-color;
+          font-weight: 600;
+          font-size: 15px;
+          line-height: 52px;
+        }
+      }
+
+      .ms-Nav-navItems .ms-Nav-compositeLink {
+        .ms-Icon {
+          margin-right: 16px;
+          color: $menu-text-color;
+          font-size: 10px;
+          line-height: 18px;
+        }
+        .ms-Nav-link {
+          width: auto;
+          height: 19px;
+          margin: 16px 0 16px 12px;
+          padding: 0;
+          .ms-Nav-linkText {
+            color: $menu-text-color;
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+        .ms-Nav-link:hover {
+          background: $dark-background;
+          .ms-Button-icon {
+            color: $menu-text-color;
+          }
+          .ms-Nav-linkText {
+            color: $menu-text-color;
+          }
+        }
+      }
+    }
+
+    :global .is-disabled + .ms-Nav-navItems {
+      .is-selected {
+        .ms-Nav-link {
+          border-color: $dark-background !important;
+
+          .ms-Icon {
+            color: $primary-color;
+          }
+        }
+      }
+      .ms-Button-flexContainer:hover {
+        .ms-Icon {
+          color: $highlight-text-color !important;
+        }
+        .ms-Nav-linkText {
+          color: $highlight-text-color !important;
+        }
+      }
+    }
+
+    .linkText {
+      margin: 0 4px;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 16px;
+        width: 206px;
+        height: 1px;
+        background-color: $primary-text-color;
+        content: '';
+      }
+    }
+  }
+}
+
+.aside-container-tiny {
+  width: 70px;
+  // background: $dark-background;
+
+  .logo {
+    position: relative;
+    height: 66px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $primary-text-color;
+    cursor: pointer;
+
+    .collapse {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $menu-text-color;
+      font-size: 12px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .nav-icon {
+    box-sizing: border-box;
+    height: 52px;
+    color: $menu-text-color;
+    line-height: 52px;
+    text-align: center;
+    cursor: pointer;
+
+    .icon {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $highlight-text-color;
+      background: $highlight-background;
+      border-left: 4px solid rgba(0, 153, 168, 0.1);
+      .icon {
+        margin-left: -4px;
+      }
+    }
+
+    &.is-show-sublinks {
+      color: $highlight-text-color;
+      background: $highlight-background;
+      border-left: 4px solid $primary-color;
+      .icon {
+        margin-left: -4px;
+      }
+    }
+  }
+}
+
+.tiny-aside-sub-menu {
+  padding: 0;
+
+  :global .ms-Callout-main {
+    border-radius: 0;
+
+    :local .sub-container {
+      box-sizing: border-box;
+      min-width: 164px;
+      margin: 0;
+      padding: 0;
+      // min-height: 52px;
+      list-style: none;
+      background: $dark-background;
+      cursor: pointer;
+
+      .sub-title {
+        padding: 16px 24px;
+        color: $highlight-text-color;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 20px;
+        // line-height: 52px;
+        text-align: left;
+        background: #313f47;
+      }
+
+      .sub-link-container {
+        padding: 12px 0;
+        .sub-link {
+          padding: 8px 24px;
+          color: $menu-text-color;
+          font-weight: 400;
+          font-size: 14px;
+          // font-style: italic;
+          line-height: 19px;
+          text-align: left;
+
+          .icon {
+            margin-right: 16px;
+            font-size: 10px;
+          }
+
+          &:hover {
+            color: $highlight-text-color;
+            background: $highlight-background;
+          }
+        }
+        .is-active {
+          color: $highlight-text-color;
+          background: $highlight-background;
+        }
+      }
+    }
+  }
+}

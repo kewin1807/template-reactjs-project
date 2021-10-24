@@ -1,0 +1,6 @@
+{
+  "layouts.aside-nav.dashboard": "Dashboard",
+  "layouts.aside-nav.settings": "Settings",
+  "layouts.aside-nav.tagManagement": "Tags",
+  "layouts.aside-nav.migrationPolicy": "Migration"
+}

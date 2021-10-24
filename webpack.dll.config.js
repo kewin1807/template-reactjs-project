@@ -21,8 +21,6 @@ module.exports = {
   entry: DLLEntry,
   output: {
     filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
-    pathinfo: true,
     path: path.join(__dirname, 'build'),
     library: '[name]_library'
   },

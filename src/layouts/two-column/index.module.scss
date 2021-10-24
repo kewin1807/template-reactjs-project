@@ -1,0 +1,41 @@
+$normal-width: 238px;
+$tiny-width: 70px;
+
+.two-column-layout {
+  height: inherit;
+  .aside {
+    position: absolute;
+    top: 0;
+    right: calc(100% - #{$normal-width});
+    bottom: 0;
+    left: 0;
+    width: $normal-width;
+    background: $dark-background;
+
+    &.aside-hide-mode {
+      right: calc(100% - #{$tiny-width});
+      width: $tiny-width;
+    }
+
+    :global .ms-Nav-groupContent {
+      animation: none;
+    }
+  }
+  .main {
+    height: inherit;
+    margin-left: $normal-width;
+
+    &.main-hide-mode {
+      margin-left: $tiny-width;
+    }
+
+    .content {
+      height: 100%;
+      background: #f7f7f7;
+    }
+  }
+
+  .catch-container {
+    padding: 24px 32px;
+  }
+}
