@@ -10,12 +10,15 @@ import {
   TooltipDelay,
   TooltipHost
 } from '@fluentui/react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { setAsideNavMode } from '@redux/action/creators';
 import { useI18N } from '@utils/i18n';
 
 import './index.module.scss';
+
+
+
 
 export enum EAsideNavMenusMode {
   Show,
@@ -23,7 +26,7 @@ export enum EAsideNavMenusMode {
 }
 
 interface IAsideNavMenusProps {
-  className?: string;
+  styleName?: string;
   mode?: EAsideNavMenusMode;
 }
 
@@ -38,7 +41,7 @@ enum ESettingsChildMenu {
 }
 
 export const AsideNavMenus: React.FunctionComponent<IAsideNavMenusProps> = ({
-  className,
+  styleName,
   mode
 }: IAsideNavMenusProps) => {
   const history = useHistory();
@@ -116,7 +119,7 @@ export const AsideNavMenus: React.FunctionComponent<IAsideNavMenusProps> = ({
     }
   }, [history.location.pathname, intl]);
   const NormalAsideComponent: FunctionComponent = () => (
-    <div styleName="aside-container" className={className}>
+    <div styleName="aside-container" className={styleName}>
       <div styleName="logo" onClick={() => dispatch(setAsideNavMode(EAsideNavMenusMode.Hide))}>
         <div styleName="img" />
         <Icon iconName="faChevronLeft" styleName="collapse" />
@@ -133,7 +136,7 @@ export const AsideNavMenus: React.FunctionComponent<IAsideNavMenusProps> = ({
       defaultTooltipVisable[key!] = false;
     });
     return (
-      <div styleName="aside-container-tiny" className={className}>
+      <div styleName="aside-container-tiny" className={styleName}>
         <div
           styleName="logo"
           onClick={() => {
@@ -166,7 +169,7 @@ export const AsideNavMenus: React.FunctionComponent<IAsideNavMenusProps> = ({
                         {navLink.links?.map(subLink => (
                           <div
                             key={subLink.key}
-                            styleName={classnames(`sub-link`, {
+                            styleName={classNames(`sub-link`, {
                               'is-active':
                                 history.location.pathname === subLink.url ||
                                 history.location.pathname.indexOf('/settings/migration') > -1 ||
@@ -198,7 +201,7 @@ export const AsideNavMenus: React.FunctionComponent<IAsideNavMenusProps> = ({
             >
               <div
                 key={navLink.key}
-                styleName={classnames('nav-icon', {
+                styleName={classNames('nav-icon', {
                   'is-show-sublinks':
                     navLink.url === history.location.pathname ||
                     (navLink.url === '/project/all-list' &&

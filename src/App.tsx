@@ -4,7 +4,7 @@ import './index.module.scss';
 
 function App() {
   return (
-    <div styleName="App">
+    <div styleName="ass">
       <header styleName="App-header">
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

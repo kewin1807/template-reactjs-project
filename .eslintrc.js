@@ -10,7 +10,7 @@ module.exports = {
     // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
 
     'prettier',
-    'plugin:jest/recommended',
+    // 'plugin:jest/recommended',
     'plugin:react/recommended',
     'plugin:import/typescript'
     // 'plugin:markdown/recommended',
@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     'react',
     'babel',
-    'jest',
+    // 'jest',
     '@typescript-eslint',
     'react-hooks',
     'unicorn',

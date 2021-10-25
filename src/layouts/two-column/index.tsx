@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { TStateType } from '@redux/reducers';
 
@@ -17,14 +17,14 @@ const LayoutTwoColumn: FunctionComponent = () => {
   return (
     <div styleName="two-column-layout">
       <div
-        styleName={classnames('aside', {
+        styleName={classNames('aside', {
           'aside-hide-mode': navigation.asideMode === EAsideNavMenusMode.Hide
         })}
       >
         <AsideNavMenus mode={navigation.asideMode} />
       </div>
       <div
-        styleName={classnames('main', {
+        styleName={classNames('main', {
           'main-hide-mode': navigation.asideMode === EAsideNavMenusMode.Hide
         })}
         className="dte-clearfix"

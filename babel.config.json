@@ -1,0 +1,20 @@
+{
+  "presets": ["@babel/preset-react", "@babel/preset-typescript"],
+  "plugins": [
+    [
+      "babel-plugin-react-css-modules",
+      {
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss"
+          }
+        },
+        "webpackHotModuleReloading": true,
+        "autoResolveMultipleImports": true,
+        "exclude": "node_modules",
+        "generateScopedName": "[local]___[hash:base64:5]",
+        "handleMissingStyleName": "warn"
+      }
+    ]
+  ]
+}
