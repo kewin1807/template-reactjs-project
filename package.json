@@ -38,7 +38,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_LOGIN=0 GENERATE_SOURCEMAP=true BUILD_PATH=www PORT=8080 webpack serve",
+    "start": "cross-env REACT_APP_LOGIN=1 GENERATE_SOURCEMAP=true BUILD_PATH=www PORT=8080 webpack serve",
     "start:login": "cross-env GENERATE_SOURCEMAP=true BUILD_PATH=www HTTPS=true PORT=443 HOST=flysaas-gcc.sharepointguild.com craco start",
     "mock": "cross-env REACT_APP_LOGIN=0 GENERATE_SOURCEMAP=true BUILD_PATH=www PORT=9090 craco start",
     "postinstall": "node_modules/.bin/webpack  --config webpack.dll.config.js",

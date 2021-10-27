@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import { TStateType } from '@redux/reducers';
+import { RouteWithAuth } from '@routes';
 
 // import { useI18N } from '@utils/i18n';
 import { AsideNavMenus, EAsideNavMenusMode } from './aside-nav';
@@ -35,8 +36,8 @@ const LayoutTwoColumn: FunctionComponent = () => {
           // style={{ height: `calc(100vh - ${globalState.breadcrumb ? '117' : '67'}px)` }}
           style={{ height: `calc(100vh - 67px)` }}
         >
-          <p>asdasdsada</p>
-          {/* <RouteWithAuth /> */}
+          {/* <p>asdasdsada</p> */}
+          <RouteWithAuth />
         </div>
       </div>
     </div>

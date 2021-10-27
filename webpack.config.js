@@ -158,13 +158,13 @@ module.exports = (env, conf) => ({
   resolve: {
     alias: {
       // '@API/types': ['src/api/types.ts'],
-      // '@API': path.resolve(__dirname, 'src/layouts/'),
+      '@API': path.resolve(__dirname, 'src/api/'),
       '@layouts': path.resolve(__dirname, 'src/layouts/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@pages': path.resolve(__dirname, 'src/pages/index.ts'),
       '@locales': path.resolve(__dirname, 'src/locales/'),
-      // '@routes': ['src/routes/index.ts'],
+      '@routes': path.resolve(__dirname, 'src/routes/'),
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@redux': path.resolve(__dirname, 'src/redux/')

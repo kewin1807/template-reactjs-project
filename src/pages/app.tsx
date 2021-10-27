@@ -8,7 +8,7 @@ import { initializeFileTypeIcons } from '@uifabric/file-type-icons';
 import { registerIcons } from '@uifabric/styling';
 import { CustomizeIcons } from '@components/ui-customize-icon';
 
-import LayoutTwoColumn from '@layouts';
+import { LayoutContainer } from '@layouts';
 import createStore from '@redux/store';
 
 import 'office-ui-fabric-core/dist/css/fabric.min.css';
@@ -90,7 +90,7 @@ export default function APPRoot() {
         <Customizer settings={{ theme }}>
           <Fabric applyTheme>
             <HashRouter>
-              <LayoutTwoColumn />
+              <LayoutContainer />
             </HashRouter>
           </Fabric>
         </Customizer>

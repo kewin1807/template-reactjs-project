@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AppRoot from '@pages';
+import { APPRoot } from '@pages';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -9,7 +9,7 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRoot />
+    <APPRoot />
   </React.StrictMode>,
   document.getElementById('root')
 );

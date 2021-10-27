@@ -1,3 +1,5 @@
-import LayoutTwoCoumn from './two-column';
+import LayoutBasic from './basic';
+import LayoutContainer from './container';
+import LayoutTwoColumn from './two-column';
 
-export default LayoutTwoCoumn;
+export { LayoutBasic,LayoutContainer, LayoutTwoColumn };
