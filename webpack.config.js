@@ -245,18 +245,19 @@ module.exports = (env, conf) => ({
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
-        include: /images/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: './src/assets/images/',
-              // development need proxy
-              publicPath: './src/assets/images/'
-            }
-          }
-        ]
+        type: 'asset/resource'
+        // include: /images/,
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       name: '[name].[ext]',
+        //       outputPath: './src/assets/images/',
+        //       // development need proxy
+        //       publicPath: './src/assets/images/'
+        //     }
+        //   }
+        // ]
       },
       {
         test: /\.(webm|mov)$/i,
@@ -273,24 +274,25 @@ module.exports = (env, conf) => ({
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              ref: true,
-              svgoConfig: {
-                plugins: {
-                  removeViewBox: false
-                }
-              }
-            }
-          }
-        ]
+        type: "asset/inline"
+        // use: [
+        //   {
+        //     loader: '@svgr/webpack',
+        //     options: {
+        //       ref: true,
+        //       svgoConfig: {
+        //         plugins: {
+        //           removeViewBox: false
+        //         }
+        //       }
+        //     }
+        //   }
+        // ]
       },
       {
         test: /\.(js|jsx|ts|tsx)$/,
         include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           // loader: 'tsx',
