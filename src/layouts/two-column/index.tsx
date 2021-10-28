@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { TStateType } from '@redux/reducers';
+import { RouteWithAuth } from '@routes';
 
 // import { useI18N } from '@utils/i18n';
 import { AsideNavMenus, EAsideNavMenusMode } from './aside-nav';
@@ -17,14 +18,14 @@ const LayoutTwoColumn: FunctionComponent = () => {
   return (
     <div styleName="two-column-layout">
       <div
-        styleName={classnames('aside', {
+        styleName={classNames('aside', {
           'aside-hide-mode': navigation.asideMode === EAsideNavMenusMode.Hide
         })}
       >
         <AsideNavMenus mode={navigation.asideMode} />
       </div>
       <div
-        styleName={classnames('main', {
+        styleName={classNames('main', {
           'main-hide-mode': navigation.asideMode === EAsideNavMenusMode.Hide
         })}
         className="dte-clearfix"
@@ -35,8 +36,8 @@ const LayoutTwoColumn: FunctionComponent = () => {
           // style={{ height: `calc(100vh - ${globalState.breadcrumb ? '117' : '67'}px)` }}
           style={{ height: `calc(100vh - 67px)` }}
         >
-          <p>asdasdsada</p>
-          {/* <RouteWithAuth /> */}
+          {/* <p>asdasdsada</p> */}
+          <RouteWithAuth />
         </div>
       </div>
     </div>

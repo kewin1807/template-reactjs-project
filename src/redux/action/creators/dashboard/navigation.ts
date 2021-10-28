@@ -8,4 +8,11 @@ export function setAsideNavMode(asideMode: EAsideNavMenusMode) {
   };
 }
 
-export default setAsideNavMode;
+export function addCancelRequest(request: A) {
+  return {
+    type: ActionTypes.ADD_CANCEL_REQUEST,
+    payload: request
+  };
+}
+
+// export default setAsideNavMode;
